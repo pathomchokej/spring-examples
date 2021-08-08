@@ -1,6 +1,10 @@
 package com.luv2code.springdemo;
 
-public class BaseballCoach implements ICoach{
+public class BaseballCoach extends BaseCoach {
+
+    public BaseballCoach(IFortuneService theFortuneService) {
+        super(theFortuneService);
+    }
 
     @Override
     public String getDailyWorkout(){

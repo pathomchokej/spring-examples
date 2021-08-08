@@ -9,9 +9,10 @@ public class HelloSpringApp {
         // applicationContext.xml must be keep in resources folder.
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        ICoach theCoach = context.getBean("baseballCoach", ICoach.class);
+        ICoach theCoach = context.getBean("myCoach", ICoach.class);
 
         System.out.println(theCoach.getDailyWorkout());
+        System.out.println(theCoach.getDailyFortune());
 
         context.close();
     }
