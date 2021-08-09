@@ -17,6 +17,7 @@
 
     <!-- Define your beans here -->
     <bean id="trackCoach" class="com.luv2code.springdemo.TrackCoach">
+        <!-- setup constructor  injection -->
         <constructor-arg ref="unluckyFortuneService" />
     </bean>
     <bean id="baseballCoach" class="com.luv2code.springdemo.BaseballCoach">
@@ -26,8 +27,12 @@
         <constructor-arg ref="happyFortuneService" />
     </bean>
     <!-- config this for change coach -->
-    <bean id="myCoach" class="com.luv2code.springdemo.HockeyCoach">
-        <constructor-arg ref="happyFortuneService" />
+    <bean id="myCoach" class="com.luv2code.springdemo.CricketCoach">
+        <!-- setup setter injection -->
+        <property name="coachName" value="UnLucky Coach :"/>
+
+        <!-- inject literal values -->
+        <property name="fortuneService" ref="unluckyFortuneService"/>
     </bean>
 
     <!-- Dependency for inject to baseball coach class (don't care position)-->
