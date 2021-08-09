@@ -7,6 +7,13 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!-- load the properties file: sport.properties -->
+    <!-- from resource folder -->
+    <context:property-placeholder location="sport.properties"/>
+
+    <!-- from class path folder (Error can't use this because classpath is mean src\main\resources folder) -->
+    <!-- <context:property-placeholder location="classpath:sport2.properties"/> -->
+
     <!-- Configuration Beans -->
     <!-- Bean for initialize logger to console, this bean must be first. and it auto call init-method -->
     <!-- see detail here => https://www.vogella.com/tutorials/Logging/article.html -->
@@ -28,16 +35,19 @@
     </bean>
     <!-- config this for change coach -->
     <bean id="myCoach" class="com.luv2code.springdemo.CricketCoach">
-        <!-- setup setter injection -->
-        <property name="coachName" value="UnLucky Coach :"/>
-
         <!-- inject literal values -->
-        <property name="fortuneService" ref="unluckyFortuneService"/>
+        <property name="coachName" value="${sport.coachName}"/>
+
+        <!-- setup setter injection -->
+        <property name="fortuneService" ref="randomFortuneService"/>
     </bean>
 
     <!-- Dependency for inject to baseball coach class (don't care position)-->
     <bean id="happyFortuneService" class="com.luv2code.springdemo.HappyFortuneService"/>
     <bean id="unluckyFortuneService" class="com.luv2code.springdemo.UnLuckyFortuneService"/>
+    <bean id="randomFortuneService" class="com.luv2code.springdemo.RandomFortuneService">
+        <property name="fortuneFile" value="${fortune.data}"/>
+    </bean>
 </beans>
 
 
