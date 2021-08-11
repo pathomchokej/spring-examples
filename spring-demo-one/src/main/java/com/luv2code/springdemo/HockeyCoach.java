@@ -10,4 +10,12 @@ public class HockeyCoach extends BaseCoach{
     public String getDailyWorkout() {
         return "Play Hockey";
     }
+
+    private void initialize() {
+        System.out.println("Hockey is initialize!!!");
+    }
+
+    private void destroy() {
+        System.out.println("Hockey is destroy!!!");
+    }
 }
