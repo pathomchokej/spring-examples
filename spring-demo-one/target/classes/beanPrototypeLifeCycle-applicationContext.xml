@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- from class path folder (Error can't use this because classpath is mean src\main\resources folder) -->
+    <!-- <context:property-placeholder location="classpath:sport2.properties"/> -->
+
+    <!-- Configuration Beans -->
+    <!-- Bean for initialize logger to console, this bean must be first. and it auto call init-method -->
+    <!-- see detail here => https://www.vogella.com/tutorials/Logging/article.html -->
+    <bean id="myLoggerConfig" class="com.luv2code.springdemo.MyLoggerConfig" init-method="initLogger">
+        <property name="rootLoggerLevel" value="FINE" />
+        <property name="printedLoggerLevel" value="FINE"/>
+    </bean>
+
+    <!-- Why it automatic create this bean ? (guess singleton scope will created even called?) -->
+    <!-- Bean custom processor to handle calling destroy methods on prototype scoped beans -->
+    <bean id="customProcessor"
+          class="com.luv2code.springdemo.CustomBeanProcessor">
+    </bean>
+
+    <bean id="hockeyCoach"
+          class="com.luv2code.springdemo.HockeyCoach"
+          init-method="initialize" destroy-method="destroy">
+        <constructor-arg ref="happyFortuneService" />
+    </bean>
+
+
+    <!-- config this for change coach -->
+    <bean id="myCoach"
+          class="com.luv2code.springdemo.CricketCoach"
+          scope="prototype"
+          init-method="doStart"
+          destroy-method="doCleanUp">
+        <!-- setup setter injection -->
+        <property name="fortuneService" ref="happyFortuneService"/>
+    </bean>
+
+    <!-- Dependency for inject to baseball coach class (don't care position)-->
+    <bean id="happyFortuneService" class="com.luv2code.springdemo.HappyFortuneService"/>
+    <bean id="unluckyFortuneService" class="com.luv2code.springdemo.UnLuckyFortuneService"/>
+</beans>
+
+
+
+
+
