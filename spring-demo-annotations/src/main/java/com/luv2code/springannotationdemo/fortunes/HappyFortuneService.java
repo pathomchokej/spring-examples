@@ -8,9 +8,9 @@ import javax.annotation.PreDestroy;
 
 @Component
 @Scope("prototype")
-public class HappyFortune implements IFortuneService{
+public class HappyFortuneService implements IFortuneService{
 
-    public HappyFortune(){
+    public HappyFortuneService(){
         System.out.println("HappyFortune constructor called");
     }
 
