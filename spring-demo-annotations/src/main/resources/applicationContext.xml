@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- load the properties file: sport.properties -->
+    <!-- from resource folder -->
+    <!--<context:property-placeholder location="sport.properties"/>-->
+
+    <!-- from class path folder (Error can't use this because classpath is mean src\main\resources folder) -->
+    <!-- <context:property-placeholder location="classpath:sport2.properties"/> -->
+
+    <!-- Configuration Beans -->
+    <!-- Bean for initialize logger to console, this bean must be first. and it auto call init-method -->
+    <!-- see detail here => https://www.vogella.com/tutorials/Logging/article.html -->
+    <bean id="myLoggerConfig" class="com.luv2code.springannotationdemo.MyLoggerConfig" init-method="initLogger">
+        <property name="rootLoggerLevel" value="FINE" />
+        <property name="printedLoggerLevel" value="FINE"/>
+    </bean>
+
+    <!-- Define your beans here -->
+
+</beans>
+
+
+
+
+
