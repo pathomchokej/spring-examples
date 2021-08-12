@@ -1,14 +1,21 @@
 package com.luv2code.springannotationdemo;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+@Component
 public class MyLoggerConfig {
+
+    @Value("FINE")
     private String rootLoggerLevel;
+    @Value("FINE")
     private String printedLoggerLevel;
 
     public void setRootLoggerLevel(String rootLoggerLevel) {
@@ -19,6 +26,7 @@ public class MyLoggerConfig {
         this.printedLoggerLevel = printedLoggerLevel;
     }
 
+    @PostConstruct
     public void initLogger() {
 
         // parse levels

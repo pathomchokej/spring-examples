@@ -17,10 +17,7 @@
     <!-- Configuration Beans -->
     <!-- Bean for initialize logger to console, this bean must be first. and it auto call init-method -->
     <!-- see detail here => https://www.vogella.com/tutorials/Logging/article.html -->
-    <bean id="myLoggerConfig" class="com.luv2code.springannotationdemo.MyLoggerConfig" init-method="initLogger">
-        <property name="rootLoggerLevel" value="FINE" />
-        <property name="printedLoggerLevel" value="FINE"/>
-    </bean>
+
 
 
     <context:component-scan base-package="com.luv2code.springannotationdemo"/>
