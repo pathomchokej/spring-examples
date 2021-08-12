@@ -1,5 +1,6 @@
 package com.luv2code.springannotationdemo;
 
+import com.luv2code.springannotationdemo.coaches.ICoach;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AnnotationExtendDemoApp {
