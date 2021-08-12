@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public abstract class BaseCoach implements ICoach, IFortuneService{
 
+    @Autowired
     protected IFortuneService fortuneService;
 
+    /*
     //@Autowired
     public void setFortuneService(IFortuneService service){
         System.out.println(">>Inside setter function");
@@ -18,6 +20,8 @@ public abstract class BaseCoach implements ICoach, IFortuneService{
         System.out.println(">>Inside any method");
         this.fortuneService = service;
     }
+
+     */
 
     /*
     protected BaseCoach(IFortuneService fortuneService){

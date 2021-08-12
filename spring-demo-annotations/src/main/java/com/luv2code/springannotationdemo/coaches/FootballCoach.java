@@ -14,6 +14,10 @@ public class FootballCoach extends BaseCoach{
     }
      //*/
 
+    public FootballCoach(){
+        System.out.println("FootballCoach constructor called");
+    }
+
     @Override
     public String getDailyWorkout() {
         return "Practice kick 50 hits";
