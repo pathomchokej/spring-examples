@@ -22,6 +22,9 @@
         <property name="printedLoggerLevel" value="FINE"/>
     </bean>
 
+
+    <context:component-scan base-package="com.luv2code.springannotationdemo"/>
+
     <!-- Define your beans here -->
 
 </beans>
