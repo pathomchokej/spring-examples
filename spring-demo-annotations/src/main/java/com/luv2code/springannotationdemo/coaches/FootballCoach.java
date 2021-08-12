@@ -7,10 +7,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class FootballCoach extends BaseCoach{
 
+    /*
     @Autowired
     public FootballCoach(IFortuneService fortuneService) {
         super(fortuneService);
     }
+     //*/
 
     @Override
     public String getDailyWorkout() {
