@@ -7,10 +7,22 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Scope("prototype")
 @Component
 public class BaseballCoach extends BaseCoach {
 
+    @PostConstruct
+    public void initialize(){
+        System.out.println(">>> Baseball coach initialize");
+    }
+
+    @PreDestroy
+    public void destroy(){
+        System.out.println(">>> Baseball coach destroy");
+    }
 
     @Autowired
     public BaseballCoach(@Qualifier("happyFortuneService") IFortuneService service){
