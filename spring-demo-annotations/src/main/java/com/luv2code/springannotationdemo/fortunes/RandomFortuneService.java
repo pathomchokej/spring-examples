@@ -1,6 +1,7 @@
 package com.luv2code.springannotationdemo.fortunes;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -13,8 +14,9 @@ import java.util.List;
 import java.util.Random;
 
 @Component
+@PropertySource("fortuneData.properties")
 public class RandomFortuneService implements IFortuneService{
-    // TODO: Create list of fortune
+    //  Create list of fortune
 
     @Value("${fortuneData.path}")
     private String path;
@@ -61,7 +63,7 @@ public class RandomFortuneService implements IFortuneService{
     @Override
     public String getDailyFortune() {
 
-        // TODO: Pick random data from list
+        // Pick random data from list
         if(null != theFortunes && theFortunes.size() > 0)
         {
             // pick a random string from the array
