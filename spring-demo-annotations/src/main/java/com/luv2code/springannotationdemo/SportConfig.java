@@ -7,9 +7,12 @@ import com.luv2code.springannotationdemo.fortunes.SadFortuneService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @ComponentScan("com.luv2code.springannotationdemo")
+@PropertySource("fortuneData.properties")
+@PropertySource("sport.properties")
 public class SportConfig {
 
     @Bean

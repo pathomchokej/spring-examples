@@ -14,6 +14,7 @@ public class JavaConfigDemoApp {
         BaseCoach coach = context.getBean("swimCoach", BaseCoach.class);
 
         // call function
+        System.out.println(coach.getInfo());
         System.out.println(coach.getDailyWorkout());
         System.out.println(coach.getDailyFortune());
 

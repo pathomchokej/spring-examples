@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Random;
 
 @Component
-@PropertySource("fortuneData.properties")
 public class RandomFortuneService implements IFortuneService{
     //  Create list of fortune
 

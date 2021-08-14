@@ -3,10 +3,16 @@ package com.luv2code.springannotationdemo.coaches;
 import com.luv2code.springannotationdemo.fortunes.IFortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 
 public abstract class BaseCoach implements ICoach, IFortuneService{
 
     protected IFortuneService fortuneService;
+
+    @Value("${foo.team}")
+    protected String team;
+    @Value("${foo.email}")
+    protected String email;
 
     @Autowired
     @Qualifier("randomFortuneService")
@@ -31,6 +37,9 @@ public abstract class BaseCoach implements ICoach, IFortuneService{
     }
      */
 
+    public String getInfo(){
+        return "Team:" + this.team + ", Email:" + this.email;
+    }
     @Override
     public String getDailyFortune(){
         return (null != this.fortuneService)? fortuneService.getDailyFortune() : "No fortune service";
