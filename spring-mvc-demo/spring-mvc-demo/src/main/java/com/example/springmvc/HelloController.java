@@ -13,6 +13,6 @@ public class HelloController {
     public String printHello(ModelMap model){
 
         model.addAttribute("message", "Hellooooo");
-        return "hello";
+        return "hello"; // return view name, viewResolver
     }
 }
