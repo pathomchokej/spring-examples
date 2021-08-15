@@ -11,6 +11,8 @@
     <title>Student Confirm</title>
 </head>
 <body>
-<h2>The student is confirmed : ${student.firstName} ${student.lastName}</h2>
+<h2>The student is confirmed : ${student.firstName} ${student.lastName} [ ${student.country}]</h2>
+<br><br>
+
 </body>
 </html>
