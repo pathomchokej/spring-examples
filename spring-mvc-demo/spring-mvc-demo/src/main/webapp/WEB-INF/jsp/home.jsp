@@ -11,7 +11,7 @@
     <title>Home</title>
 </head>
 <body>
-<h2>Spring MVC Demo - Home Page</h2>
+<h2>Spring MVC Demo - Home Page ${pageContext.request.contextPath}</h2>
 <hr>
 <%-- if add herf with "/" will remove artifact path --%>
 <%-- e.g. href="showForm" don't same href="/showForm" --%>
