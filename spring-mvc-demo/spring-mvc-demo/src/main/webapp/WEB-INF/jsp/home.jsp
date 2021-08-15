@@ -16,7 +16,11 @@
 <%-- if add herf with "/" will remove artifact path --%>
 <%-- e.g. href="showForm" don't same href="/showForm" --%>
 <a href="showForm"> test-form </a>
-<br>
+<br><br>
 <a href="processForm"> test-process </a>
+<br><br>
+<a href="student/showForm"> Student Form </a>
+<br><br>
+
 </body>
 </html>
