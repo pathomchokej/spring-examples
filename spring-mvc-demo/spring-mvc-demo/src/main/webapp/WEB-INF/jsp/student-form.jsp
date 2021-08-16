@@ -24,7 +24,7 @@
             <form:option value="DE" label="Germany"/>
             <form:option value="IN" label="India"/>
         --%>
-            <form:options items="${student.countryOptions}"/>
+            <form:options items="${theCountryOptions}"/>
         </form:select>
         <br><br>
         <input type="submit" value="Submit"/>

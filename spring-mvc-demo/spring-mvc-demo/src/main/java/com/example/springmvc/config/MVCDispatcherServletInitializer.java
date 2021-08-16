@@ -1,7 +1,7 @@
 package com.example.springmvc.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-
+/*
 public class MVCDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected Class<?>[] getRootConfigClasses() {
@@ -18,3 +18,5 @@ public class MVCDispatcherServletInitializer extends AbstractAnnotationConfigDis
         return new String[] {"/"};
     }
 }
+
+ */
