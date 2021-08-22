@@ -7,6 +7,7 @@ public class Student {
     private String lastName;
     private String country;
     private String favoriteLanguage;
+    private String[] favoriteOS;
 
     public Student(){
     }
@@ -41,5 +42,13 @@ public class Student {
 
     public void setFavoriteLanguage(String favoritLanguage) {
         this.favoriteLanguage = favoritLanguage;
+    }
+
+    public String[] getFavoriteOS() {
+        return favoriteOS;
+    }
+
+    public void setFavoriteOS(String[] favoriteOS) {
+        this.favoriteOS = favoriteOS;
     }
 }
